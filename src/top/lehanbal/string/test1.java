@@ -1,27 +1,27 @@
 package top.lehanbal.string;
 
+import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class test1 {
     public static void main(String[] args) {
-        int N = 50;
-        double[] a = new double[N];
-        for (int i = 0; i < N; i++) {
-            a[i] = StdRandom.random();
+        String a = args[0];
+        boolean flag = true;
+        for (int i = 1; i < args.length; i++) {
+            if (!a.equals(args[i])) {
+                flag = false;
+            }
         }
-        Arrays.sort(a);
-        for (int i = 0; i < N; i++) {
-            double x = 1.0 * i / N;
-            double y = a[i] / 2.0;
-            double rw = 0.5 / N;
-            double rh = a[i] / 2.0;
-            StdOut.printf("x = %f, y = %f, rw = %f, rh = %f", x, y, rw, rh);
-            StdOut.println();
-            StdDraw.filledRectangle(x, y, rw, rh);
+        if (flag) {
+            StdOut.println("equal");
+        } else {
+            StdOut.println("not equal");
         }
     }
 }
