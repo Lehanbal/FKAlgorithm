@@ -134,8 +134,5 @@ public class Point2D implements Comparable<Point2D>{
             StdDraw.show();
             StdDraw.pause(100);
         }
-
-        Bag
-
     }
 }
